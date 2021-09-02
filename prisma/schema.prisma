@@ -16,7 +16,7 @@ model Post {
   createdat DateTime @default(now()) @db.Timestamp(0)
   users     User     @relation(fields: [autorid], references: [id])
 
-  Review Review[]
+  reviewer Review[]
   @@map("posts")
 }
 
@@ -27,17 +27,18 @@ model User {
   createdat DateTime? @default(now()) @db.Timestamp(0)
   posts     Post[]
 
-  Review Review[]
+  reviewer Review[]
   @@map("users")
 }
 
 model Review {
-  id         Int  @id @default(autoincrement())
+  id         Int       @id @default(autoincrement())
   postId     Int
-  post       Post @relation(fields: [postId], references: [id])
+  post       Post      @relation(fields: [postId], references: [id])
   reviewerId Int
-  reviewer   User @relation(fields: [reviewerId], references: [id])
+  reviewer   User      @relation(fields: [reviewerId], references: [id])
   nota       Int
+  createdAt  DateTime? @default(now())
 
   @@map("reviews")
 }
