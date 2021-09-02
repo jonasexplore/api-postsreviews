@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/JulianaAmoasei/2036-graphql-prisma2#readme",
   "dependencies": {
+    "@nexus/schema": "^0.20.1",
     "@prisma/client": "^2.30.3",
     "apollo-server": "^2.19.0",
     "graphql": "^15.4.0",
     "mysql2": "^2.2.5",
+    "nexus": "^1.1.0",
+    "nexus-plugin-prisma": "^0.35.0",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
